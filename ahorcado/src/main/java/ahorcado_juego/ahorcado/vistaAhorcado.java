@@ -11,6 +11,10 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import javax.swing.border.TitledBorder;
+import javax.swing.ImageIcon;
+import java.awt.Dimension;
 
 public class vistaAhorcado extends JFrame {
 
@@ -46,8 +50,8 @@ public class vistaAhorcado extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("label para la palabra secreta");
 		lblNewLabel_2.setBackground(Color.PINK);
-		lblNewLabel_2.setBorder(new LineBorder(new Color(0, 0, 0), 0));
-		lblNewLabel_2.setBounds(23, 179, 341, 126);
+		lblNewLabel_2.setBorder(new LineBorder(new Color(0, 0, 0), 3424));
+		lblNewLabel_2.setBounds(52, 245, 256, 29);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel = new JLabel("");
@@ -182,5 +186,32 @@ public class vistaAhorcado extends JFrame {
 		JButton btnNewButton_9 = new JButton("PISTA");
 		btnNewButton_9.setBounds(119, 577, 117, 29);
 		contentPane.add(btnNewButton_9);
+		
+		JLabel lblNewLabel_3 = new JLabel("Palabra secreta");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLACK));
+		lblNewLabel_3.setVerticalAlignment(SwingConstants.TOP);
+		lblNewLabel_3.setBounds(42, 221, 274, 67);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
+		lblNewLabel_4.setBounds(31, 179, 32, 39);
+		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_4_1 = new JLabel("");
+		lblNewLabel_4_1.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
+		lblNewLabel_4_1.setBounds(62, 179, 32, 39);
+		contentPane.add(lblNewLabel_4_1);
+		
+		JLabel lblNewLabel_4_2 = new JLabel("");
+		lblNewLabel_4_2.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
+		lblNewLabel_4_2.setBounds(123, 179, 32, 39);
+		contentPane.add(lblNewLabel_4_2);
+		
+		JLabel lblNewLabel_4_1_1 = new JLabel("");
+		lblNewLabel_4_1_1.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
+		lblNewLabel_4_1_1.setBounds(94, 179, 32, 39);
+		contentPane.add(lblNewLabel_4_1_1);
 	}
 }
