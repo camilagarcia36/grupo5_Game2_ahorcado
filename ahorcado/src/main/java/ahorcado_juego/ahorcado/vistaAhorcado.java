@@ -194,24 +194,24 @@ public class vistaAhorcado extends JFrame {
 		lblNewLabel_3.setBounds(42, 221, 274, 67);
 		contentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
-		lblNewLabel_4.setBounds(31, 179, 32, 39);
-		contentPane.add(lblNewLabel_4);
+		JLabel vida1 = new JLabel("");
+		vida1.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
+		vida1.setBounds(31, 179, 32, 39);
+		contentPane.add(vida1);
 		
-		JLabel lblNewLabel_4_1 = new JLabel("");
-		lblNewLabel_4_1.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
-		lblNewLabel_4_1.setBounds(62, 179, 32, 39);
-		contentPane.add(lblNewLabel_4_1);
+		JLabel vida2 = new JLabel("");
+		vida2.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
+		vida2.setBounds(62, 179, 32, 39);
+		contentPane.add(vida2);
 		
-		JLabel lblNewLabel_4_2 = new JLabel("");
-		lblNewLabel_4_2.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
-		lblNewLabel_4_2.setBounds(123, 179, 32, 39);
-		contentPane.add(lblNewLabel_4_2);
+		JLabel vida4 = new JLabel("");
+		vida4.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
+		vida4.setBounds(123, 179, 32, 39);
+		contentPane.add(vida4);
 		
-		JLabel lblNewLabel_4_1_1 = new JLabel("");
-		lblNewLabel_4_1_1.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
-		lblNewLabel_4_1_1.setBounds(94, 179, 32, 39);
-		contentPane.add(lblNewLabel_4_1_1);
+		JLabel vida3 = new JLabel("");
+		vida3.setIcon(new ImageIcon("/Users/camila/Downloads/concepto.png"));
+		vida3.setBounds(94, 179, 32, 39);
+		contentPane.add(vida3);
 	}
 }
