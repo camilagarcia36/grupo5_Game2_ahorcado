@@ -1,39 +1,32 @@
 package ahorcado_juego.ahorcado;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.Enumeration;
 
-import javax.swing.*; 
-import javax.swing.JLabel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
-import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.SwingConstants;
-import javax.swing.border.TitledBorder;
-import javax.swing.ImageIcon;
-import java.awt.Dimension;
 
-public class vistaAhorcado extends JFrame {
+import javax.swing.border.TitledBorder;
+
+import java.awt.Dimension;
+import java.awt.SystemColor;
+
+public class vistaAhorcado extends JFrame implements ActionListener, MouseListener {
 
 	private JPanel contentPane;
+	private ButtonGroup letterGroup= new ButtonGroup();
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					vistaAhorcado frame = new vistaAhorcado();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
@@ -77,6 +70,7 @@ public class vistaAhorcado extends JFrame {
 		
 		/*BOTONES LETRAS*/
 		JButton btnA = new JButton("A");
+		btnA.setBackground(new Color(240, 240, 240));
 		btnA.setBounds(17, 345, 46, 46);
 		contentPane.add(btnA);
 		
@@ -202,28 +196,96 @@ public class vistaAhorcado extends JFrame {
 		
 		/*BOTONES DE LAS VIDAS O PISTAS*/
 		JButton btnNewButton_10 = new JButton("");
+		btnNewButton_10.setBackground(new Color(255, 128, 128));
 		btnNewButton_10.setIcon(new ImageIcon("./../ahorcado/img/concepto.png"));
 		btnNewButton_10.setBounds(42, 179, 32, 43);
 		contentPane.add(btnNewButton_10);
 		
 		JButton btnNewButton_10_1 = new JButton("");
+		btnNewButton_10_1.setBackground(new Color(255, 128, 128));
 		btnNewButton_10_1.setIcon(new ImageIcon("./../ahorcado/img/concepto.png"));
 		btnNewButton_10_1.setBounds(77, 179, 32, 43);
 		contentPane.add(btnNewButton_10_1);
 		
 		JButton btnNewButton_10_2 = new JButton("");
+		btnNewButton_10_2.setBackground(new Color(255, 128, 128));
 		btnNewButton_10_2.setIcon(new ImageIcon("./../ahorcado/img/concepto.png"));
 		btnNewButton_10_2.setBounds(109, 179, 32, 43);
 		contentPane.add(btnNewButton_10_2);
 		
 		JButton btnNewButton_10_3 = new JButton("");
+		btnNewButton_10_3.setBackground(new Color(255, 128, 128));
 		btnNewButton_10_3.setIcon(new ImageIcon("./../ahorcado/img/concepto.png"));
 		btnNewButton_10_3.setBounds(142, 179, 32, 43);
 		contentPane.add(btnNewButton_10_3);
 		
 		JButton btnNewButton_10_4 = new JButton("");
+		btnNewButton_10_4.setBackground(new Color(255, 128, 128));
 		btnNewButton_10_4.setIcon(new ImageIcon("./../ahorcado/img/concepto.png"));
 		btnNewButton_10_4.setBounds(174, 179, 32, 43);
 		contentPane.add(btnNewButton_10_4);
+		
+		letterGroup.add(btnA);
+		letterGroup.add(btnB);
+		letterGroup.add(btnC);
+		letterGroup.add(btnD);
+		letterGroup.add(btnE);
+		letterGroup.add(btnF);
+		letterGroup.add(btnG);
+		letterGroup.add(btnH);
+		letterGroup.add(btnI);
+		letterGroup.add(btnJ);
+		letterGroup.add(btnK);
+		letterGroup.add(btnL);
+		letterGroup.add(btnM);
+		letterGroup.add(btnN);
+		letterGroup.add(btnÑ);
+		letterGroup.add(btnO);
+		letterGroup.add(btnP);
+		letterGroup.add(btnQ);
+		letterGroup.add(btnR);
+		letterGroup.add(btnS);
+		letterGroup.add(btnT);
+		letterGroup.add(btnU);
+		letterGroup.add(btnV);
+		letterGroup.add(btnW);
+		letterGroup.add(btnX);
+		letterGroup.add(btnY);
+		letterGroup.add(btnZ);
 	}
+	public void desactivarButton(JButton button)
+	{
+		button.setSelected(false);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		
+	}
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
