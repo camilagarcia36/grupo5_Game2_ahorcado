@@ -126,8 +126,42 @@ public class InterfazJuego extends JFrame {
 		contentPane.add(imagenes);
 
 		// LISTENERS
-//FALTAN los de salir, acerca de y coomojugar. 
-		
+
+		// El ActionListener del menú "Como jugar" muestra una
+		// ventana emergente que explica las reglas del juego.
+
+		comoJugar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null,
+						"Tienes 5 pistas.\nPulsando las teclas de abajo indicas la letra que quieres, si fallas cuenta como error si aciertas se muestra la letra.\nEn todo momento tienes el boton resolver si sabes la palabra.");
+			}
+		});
+
+		// Listener de acerca de
+
+		acercaDe.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null,
+						"Desarrollada por Marc y Camila");
+			}
+		});
+
+		// Listener para cerrar la aplicación
+
+		salir.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				System.exit(0);
+
+			}
+		});
+
 		// Listener confirmación de pista y ejecución de esta misma
 
 		pista.addActionListener(new ActionListener() {
