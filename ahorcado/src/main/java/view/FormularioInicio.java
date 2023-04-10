@@ -32,13 +32,15 @@ public class FormularioInicio extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel dificultad = new JLabel("Dificultad");
-		dificultad.setFont(new Font("Tahoma", Font.BOLD, 11));
+		
 
+		
+		//SE crean los radio button de las dificultades. 
 		facil = new JRadioButton("Facil", true);
 		normal = new JRadioButton("Normal");
 		dificil = new JRadioButton("Dificil");
 		JLabel categoria = new JLabel("Categoria");
-		categoria.setFont(new Font("Tahoma", Font.BOLD, 11));
+		
 		comboBox = new JComboBox<Object>();
 		ButtonGroup grupo = new ButtonGroup();
 		btn = new JButton("Enviar");
@@ -52,6 +54,8 @@ public class FormularioInicio extends JFrame {
 		normal.setBounds(115, 104, 109, 23);
 		dificil.setBounds(115, 130, 109, 23);
 		categoria.setBounds(249, 56, 69, 14);
+		
+		//Los dos tipos de array que hemos creado. 
 		comboBox.setModel(
 				new DefaultComboBoxModel<Object>(new String[] { "Superhéroes", "Deportes" }));
 		comboBox.setBounds(313, 78, 109, 22);
