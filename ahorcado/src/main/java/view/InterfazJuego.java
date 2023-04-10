@@ -248,7 +248,7 @@ public class InterfazJuego extends JFrame {
 			pista.setEnabled(true);
 
 			pistas.setIcon(new ImageIcon(
-					new ImageIcon("../pista5.png").getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH)));
+					new ImageIcon("img/./pista5.png").getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH)));
 			colgao.setIcon(null);
 
 			for (int i = 0; i < array.length; i++) {
