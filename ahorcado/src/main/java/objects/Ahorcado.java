@@ -153,6 +153,33 @@ public class Ahorcado {
 		}
 
 		// Método para que te proporcione una pista que será una letra de la palabra
-		// secreta falta!! 
+		// secreta
 
+		public void ejecutarPista(JButton[] array) {
+			lifeNumber--;
+			boolean pistaValida;
+			char letra;
+			do {
+				pistaValida = true;
+				letra = palabraSecreta.charAt((int) (Math.random() * palabraSecreta.length()));
+
+				for (int i = 0; i < palabraSecretaMostrar.length && pistaValida; i++) {
+					if (palabraSecretaMostrar[i] == letra) {
+						pistaValida = false;
+					}
+				}
+			} while (!pistaValida);
+
+			for (int i = 0; i < palabraSecreta.length(); i++) {
+				if (palabraSecreta.charAt(i) == letra) {
+					palabraSecretaMostrar[i] = letra;
+				}
+			}
+
+			for (int i = 0; i < array.length; i++) {
+				if (array[i].getText().charAt(0) == letra) {
+					array[i].setEnabled(false);
+				}
+			}
+		}
 	}
