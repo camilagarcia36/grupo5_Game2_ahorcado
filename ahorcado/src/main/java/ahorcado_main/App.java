@@ -1,4 +1,4 @@
-package ahorcado_juego.ahorcado;
+package ahorcado_main;
 
 /**
  * Hello world!
