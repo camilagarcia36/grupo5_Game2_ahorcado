@@ -26,8 +26,10 @@ public class App
     	//Creamos un hashtable con las palabras a utilizar.  
     	Hashtable<String, ArrayList<String>> palabrasDoc = new Hashtable<String, ArrayList<String>>();
 		palabrasDoc.put("Superhéroes", new ArrayList<String>(Arrays.asList("spiderman", "hulk", "groot")));
-
-		palabrasDoc.put("Deportes", new ArrayList<String>(Arrays.asList("tenis", "baloncesto", "balomano")));
+		palabrasDoc.put("Personajes de Videjuegos", new ArrayList<String>(Arrays.asList("mario", "pikachu", "sonic")));
+		palabrasDoc.put("Lenguas", new ArrayList<String>(Arrays.asList("ingles", "español", "catalan")));
+		palabrasDoc.put("Peliculas", new ArrayList<String>(Arrays.asList("jurassic park", "star wars", "scream")));
+		palabrasDoc.put("Deportes", new ArrayList<String>(Arrays.asList("tenis", "baloncesto", "balonmano")));
 		
 		
 		

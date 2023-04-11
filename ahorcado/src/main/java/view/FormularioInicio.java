@@ -57,7 +57,7 @@ public class FormularioInicio extends JFrame {
 		
 		//Los dos tipos de array que hemos creado. 
 		comboBox.setModel(
-				new DefaultComboBoxModel<Object>(new String[] { "Superhéroes", "Deportes" }));
+				new DefaultComboBoxModel<Object>(new String[] { "Superhéroes", "Deportes","Personajes de Videjuegos","Lenguas","Peliculas" }));
 		comboBox.setBounds(313, 78, 109, 22);
 		btn.setBounds(199, 263, 109, 22);
 
