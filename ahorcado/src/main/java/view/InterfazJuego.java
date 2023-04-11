@@ -42,7 +42,7 @@ public class InterfazJuego extends JFrame {
 		// este bloque de código define la estructura visual del juego
 		setResizable(false);
 		setTitle("Ahorcado");
-		setBounds(410, 200, 750, 610);
+		setBounds(410, 200, 750, 710);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		contentPane = new JPanel();
@@ -111,11 +111,11 @@ public class InterfazJuego extends JFrame {
 				new TitledBorder(null, "Palabra Secreta", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		palabra.add(palabra_secreta);
 
-		botones.setBounds(10, 382, 378, 168);
+		botones.setBounds(10, 382, 378, 272);
 		botones.setBorder(new TitledBorder(null, "Teclado", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		botones.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
-		imagenes.setBounds(398, 10, 326, 540);
+		imagenes.setBounds(400, 21, 326, 595);
 		imagenes.setBorder(new EmptyBorder(0, 0, 0, 0));
 		imagenes.setBorder(new LineBorder(new Color(0, 0, 0)));
 		imagenes.add(colgao);
@@ -248,7 +248,7 @@ public class InterfazJuego extends JFrame {
 			pista.setEnabled(true);
 
 			pistas.setIcon(new ImageIcon(
-					new ImageIcon("../pista5.png").getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH)));
+					new ImageIcon("img/./pista5.png").getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH)));
 			colgao.setIcon(null);
 
 			for (int i = 0; i < array.length; i++) {
