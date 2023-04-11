@@ -26,7 +26,7 @@ import objects.Ahorcado;
 public class InterfazJuego extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane, menu, palabra, vidas, palabra_secreta, botones, imagenes;
+	private JPanel contentPane, menu, palabra, lifes, palabra_secreta, botones, imagenes;
 	private JButton[] array = new JButton[27];
 	private JTextField textPalabra;
 	private JLabel pistas = new JLabel(), colgao = new JLabel();
@@ -72,7 +72,7 @@ public class InterfazJuego extends JFrame {
 		menuArchivo.add(numIntentos);
 		menu = new JPanel();
 		palabra = new JPanel();
-		vidas = new JPanel();
+		lifes = new JPanel();
 		botones = new JPanel();
 		imagenes = new JPanel();
 		palabra_secreta = new JPanel();
@@ -93,12 +93,12 @@ public class InterfazJuego extends JFrame {
 		palabra.setBounds(10, 182, 378, 189);
 		palabra.setBorder(new LineBorder(new Color(0, 0, 0)));
 		palabra.setLayout(null);
-		vidas.setBounds(10, 11, 358, 64);
-		vidas.setBorder(new EmptyBorder(0, 0, 0, 0));
-		vidas.add(pistas);
+		lifes.setBounds(10, 11, 358, 64);
+		lifes.setBorder(new EmptyBorder(0, 0, 0, 0));
+		lifes.add(pistas);
 		pista.setBounds(137, 80, 105, 23);
 		palabra.add(pista);
-		palabra.add(vidas);
+		palabra.add(lifes);
 		palabra_secreta.setBounds(10, 114, 358, 64);
 		palabra_secreta.setLayout(null);
 		textPalabra.setBounds(21, 21, 314, 32);

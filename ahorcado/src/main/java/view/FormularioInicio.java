@@ -14,7 +14,7 @@ public class FormularioInicio extends JFrame {
 
 		private static final long serialVersionUID = 1L;
 		private JPanel contentPane;
-		private JRadioButton facil, normal, dificil;
+		private JRadioButton easy, normal, hard;
 		private JComboBox<Object> comboBox;
 		private JButton btn;
 
@@ -36,23 +36,23 @@ public class FormularioInicio extends JFrame {
 
 		
 		//SE crean los radio button de las dificultades. 
-		facil = new JRadioButton("Facil", true);
+		easy = new JRadioButton("Facil", true);
 		normal = new JRadioButton("Normal");
-		dificil = new JRadioButton("Dificil");
+		hard = new JRadioButton("Dificil");
 		JLabel categoria = new JLabel("Categoria");
 		
 		comboBox = new JComboBox<Object>();
 		ButtonGroup grupo = new ButtonGroup();
 		btn = new JButton("Enviar");
 
-		grupo.add(facil);
+		grupo.add(easy);
 		grupo.add(normal);
-		grupo.add(dificil);
+		grupo.add(hard);
 
 		dificultad.setBounds(53, 56, 69, 15);
-		facil.setBounds(115, 78, 109, 23);
+		easy.setBounds(115, 78, 109, 23);
 		normal.setBounds(115, 104, 109, 23);
-		dificil.setBounds(115, 130, 109, 23);
+		hard.setBounds(115, 130, 109, 23);
 		categoria.setBounds(249, 56, 69, 14);
 		
 		//Los dos tipos de array que hemos creado. 
@@ -62,19 +62,19 @@ public class FormularioInicio extends JFrame {
 		btn.setBounds(199, 263, 109, 22);
 
 		contentPane.add(dificultad);
-		contentPane.add(facil);
+		contentPane.add(easy);
 		contentPane.add(normal);
-		contentPane.add(dificil);
+		contentPane.add(hard);
 		contentPane.add(categoria);
 		contentPane.add(comboBox);
 		contentPane.add(btn);
 	}
 	public JRadioButton getFacil() {
-		return facil;
+		return easy;
 	}
 
 	public void setFacil(JRadioButton facil) {
-		this.facil = facil;
+		this.easy = facil;
 	}
 
 	public JRadioButton getNormal() {
@@ -86,11 +86,11 @@ public class FormularioInicio extends JFrame {
 	}
 
 	public JRadioButton getDificil() {
-		return dificil;
+		return hard;
 	}
 
 	public void setDificil(JRadioButton dificil) {
-		this.dificil = dificil;
+		this.hard = dificil;
 	}
 
 	public JComboBox<Object> getComboBox() {
