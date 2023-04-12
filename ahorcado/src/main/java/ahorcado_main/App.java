@@ -1,12 +1,10 @@
 package ahorcado_main;
 
-import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Hashtable;
 
 import view.FormularioInicio;
-import view.InterfazJuego;
 
 public class App {
 
@@ -23,9 +21,11 @@ public class App {
         palabrasDoc.put("Peliculas", new ArrayList<String>(Arrays.asList("cars", "up", "scream")));
         palabrasDoc.put("Deportes", new ArrayList<String>(Arrays.asList("tenis", "baloncesto", "balonmano")));
 
-
         
+   
+
         // Creamos las ventanas 
+
                 try {
                      FormularioInicio form = new FormularioInicio();
                      form.setVisible(true);
@@ -34,5 +34,9 @@ public class App {
                     e.printStackTrace();
                 }
             }
+
     
 }
+
+    
+
