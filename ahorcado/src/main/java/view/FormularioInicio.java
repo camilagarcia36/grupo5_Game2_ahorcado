@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
@@ -13,12 +14,11 @@ public class FormularioInicio extends JFrame {
 
 	// Atributos
 	private static InterfazJuego interfaz = new InterfazJuego();
-	private static App alpp = new App();
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JRadioButton easy, normal, hard;
 	private JComboBox<Object> comboBox;
-	private JButton btn;
+	private JButton btnStart;
 
 	// Create the frame.
 	public FormularioInicio() {
@@ -26,13 +26,11 @@ public class FormularioInicio extends JFrame {
         setTitle("Ahorcado");
         setBounds(500, 300, 550, 400);
         
-
         contentPane = new JPanel();
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
         JLabel dificultad = new JLabel("Dificultad");
-
 
 
         //SE crean los radio button de las dificultades. 
@@ -43,7 +41,7 @@ public class FormularioInicio extends JFrame {
 
         comboBox = new JComboBox<Object>();
         ButtonGroup grupo = new ButtonGroup();
-        btn = new JButton("Enviar");
+        btnStart = new JButton("Empezar");
 
         grupo.add(easy);
         grupo.add(normal);
@@ -59,7 +57,7 @@ public class FormularioInicio extends JFrame {
         comboBox.setModel(
                 new DefaultComboBoxModel<Object>(new String[] { "Superhéroes", "Deportes","Personajes de Videjuegos","Lenguas","Peliculas" }));
         comboBox.setBounds(313, 78, 109, 22);
-        btn.setBounds(199, 263, 109, 22);
+        btnStart.setBounds(199, 263, 109, 22);
 
         contentPane.add(dificultad);
         contentPane.add(easy);
@@ -67,24 +65,21 @@ public class FormularioInicio extends JFrame {
         contentPane.add(hard);
         contentPane.add(categoria);
         contentPane.add(comboBox);
-        contentPane.add(btn);
+        contentPane.add(btnStart);
+        
+        
         //LISTENERS 
-        getBtn().addActionListener(new ActionListener() {
+        getbtnStart().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
                 
                 // ventana del juego ("interfaz")
                  
                 setVisible(false);
                 interfaz.setVisible(true);
 
+                // Seteamos los intentos
                 int intentos;
-//a
-                
-                /*  se crea una instancia de la clase "Ahorcado", que es la clase que controla la
-                 lógica del juego, y se la pasa a la ventana del juego para que se pueda
-                 iniciar el juego.
-                 */
+              
                 if (getFacil().isSelected()) {
                     intentos = 10; // Dificultad facil
                 } else if (getNormal().isSelected()) {
@@ -92,9 +87,11 @@ public class FormularioInicio extends JFrame {
                 } else {
                     intentos = 6; // Dificultad avanzada
                 }
-               
-                // Seteamos e iniciamos juego
-
+                
+                /*  se crea una instancia de la clase "Ahorcado", que es la clase que controla la
+                 lógica del juego, y se la pasa a la ventana del juego para que se pueda
+                 iniciar el juego.
+                 */
                 interfaz.setJuego(
                         new Ahorcado(intentos, (String) getComboBox().getSelectedItem(), App.palabrasDoc));
                 interfaz.iniciarJuego();
@@ -134,7 +131,7 @@ public class FormularioInicio extends JFrame {
 		this.comboBox = comboBox;
 	}
 
-	public JButton getBtn() {
-		return btn;
+	public JButton getbtnStart() {
+		return btnStart;
 	}
 }

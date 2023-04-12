@@ -29,9 +29,9 @@ public class InterfazJuego extends JFrame {
 	private JPanel contentPane, menu, palabra, lifes, palabra_secreta, botones, imagenes;
 	private JButton[] array = new JButton[27];
 	private JTextField textPalabra;
-	private JLabel pistas = new JLabel(), colgao = new JLabel();
+	private JLabel pistas = new JLabel(), colgado = new JLabel();
 
-	private FormularioInicio form= new FormularioInicio();
+	private FormularioInicio form = new FormularioInicio();
 	private Ahorcado juego;
 
 	private JButton inicio, resolver, pista;
@@ -119,32 +119,29 @@ public class InterfazJuego extends JFrame {
 		imagenes.setBounds(400, 21, 326, 595);
 		imagenes.setBorder(new EmptyBorder(0, 0, 0, 0));
 		imagenes.setBorder(new LineBorder(new Color(0, 0, 0)));
-		imagenes.add(colgao);
+		imagenes.add(colgado);
 
 		contentPane.add(menu);
 		contentPane.add(palabra);
 		contentPane.add(botones);
 		contentPane.add(imagenes);
-		
 
 		// LISTENERS
 
+		// Evento botón iniciar juego
+
+		ActionListener eventoBoton = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				form.setVisible(true);
+				setVisible(false);
+			}
+		};
+
+		getInicio().addActionListener(eventoBoton);
+		getNewGame().addActionListener(eventoBoton);
+
 		// El ActionListener del menú "Como jugar" muestra una
 		// ventana emergente que explica las reglas del juego.
-		
-		// Evento botón iniciar juego
-
-		// Evento botón iniciar juego
-        ActionListener eventoBoton = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                form.setVisible(true);
-                setVisible(false);
-            }
-        };
-
-        getInicio().addActionListener(eventoBoton);
-        getNewGame().addActionListener(eventoBoton);
-
 		comoJugar.addActionListener(new ActionListener() {
 
 			@Override
@@ -160,8 +157,7 @@ public class InterfazJuego extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null,
-						"Desarrollada por Marc y Camila");
+				JOptionPane.showMessageDialog(null, "Desarrollada por Marc y Camila");
 			}
 		});
 
@@ -181,6 +177,8 @@ public class InterfazJuego extends JFrame {
 
 		pista.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				/* comprueba la cantidad de pistas y pregunta si quieres utilizar alguna. */
 				if (JOptionPane.showConfirmDialog(contentPane,
 						"Estas seguro de perder una pista? (pistas restantes " + juego.getLifeNumber() + ")") == 0) {
 					juego.ejecutarPista(array);
@@ -207,7 +205,7 @@ public class InterfazJuego extends JFrame {
 				juego.intentoResolver(JOptionPane.showInputDialog("La palabra es: "));
 				textPalabra.setText(juego.getPalabraSecretaMostrar());
 
-				colgao.setIcon(new ImageIcon(new ImageIcon(juego.getImagenes()[juego.getIntents()]).getImage()
+				colgado.setIcon(new ImageIcon(new ImageIcon(juego.getImagenes()[juego.getIntents()]).getImage()
 						.getScaledInstance(310, 525, Image.SCALE_SMOOTH)));
 				fin();
 			}
@@ -221,6 +219,7 @@ public class InterfazJuego extends JFrame {
 	// Metodo para añadir los botones a la interfaz (teclado)
 
 	private void addBotones() {
+		//Creamos dinamicamente los botones, y se agregan al contenedor 'botones' 
 		int aux = 0;
 		for (int i = 0; i < array.length; i++) {
 			if (i != 14) {
@@ -230,9 +229,10 @@ public class InterfazJuego extends JFrame {
 				array[i] = new JButton("Ñ");
 			}
 
+			//se les asigna una letra del alfabeto o la letra "Ñ", dependiendo de la posición del índice
 			array[i].setEnabled(false);
 
-			// Listener de jugada
+			// se agrega un ActionListener a cada botón
 
 			array[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -242,7 +242,7 @@ public class InterfazJuego extends JFrame {
 					if (juego.estaLetra(btn.getText().charAt(0))) {
 						textPalabra.setText(juego.getPalabraSecretaMostrar());
 					}
-					colgao.setIcon(new ImageIcon(new ImageIcon(juego.getImagenes()[juego.getIntents()]).getImage()
+					colgado.setIcon(new ImageIcon(new ImageIcon(juego.getImagenes()[juego.getIntents()]).getImage()
 							.getScaledInstance(310, 525, Image.SCALE_SMOOTH)));
 
 					fin();
@@ -252,81 +252,77 @@ public class InterfazJuego extends JFrame {
 			botones.add(array[i]);
 		}
 	}
-	
-	
-	//a
+
+
 	// Método para iniciar el juego con variables default
 
-		public void iniciarJuego() {
-			getNumIntentos().setText("Intentos: " + juego.getIntents());
-			textPalabra.setText(juego.getPalabraSecretaMostrar());
-			resolver.setEnabled(true);
-			pista.setEnabled(true);
+	public void iniciarJuego() {
+		getNumIntentos().setText("Intentos: " + juego.getIntents());
+		textPalabra.setText(juego.getPalabraSecretaMostrar());
+		resolver.setEnabled(true);
+		pista.setEnabled(true);
 
-			pistas.setIcon(new ImageIcon(
-					new ImageIcon("img/./pista5.png").getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH)));
-			colgao.setIcon(null);
+		pistas.setIcon(new ImageIcon(
+				new ImageIcon("img/./pista5.png").getImage().getScaledInstance(350, 55, Image.SCALE_SMOOTH)));
+		colgado.setIcon(null);
 
-			for (int i = 0; i < array.length; i++) {
-				array[i].setEnabled(true);
-			}
-			
+		for (int i = 0; i < array.length; i++) {
+			array[i].setEnabled(true);
 		}
 
-		
+	}
 
-		// Método para si se finaliza el juego
+	// Método para cuando finaliza el juego
 
-		private void fin() {
-			getNumIntentos().setText("Intentos: " + juego.getIntents());
-			if (juego.palabraSecretaDesvelada()) {
-				JOptionPane.showMessageDialog(null, "Has ganado!!");
-				deshabilitarBotones();
-			} else if (juego.getIntents() == juego.getIntentsMax()) {
-				JOptionPane.showMessageDialog(null, "Has perdido!!");
-				deshabilitarBotones();
-			}
+	private void fin() {
+		getNumIntentos().setText("Intentos: " + juego.getIntents());
+		if (juego.palabraSecretaDesvelada()) {
+			JOptionPane.showMessageDialog(null, "Has ganado!!");
+			deshabilitarBotones();
+		} else if (juego.getIntents() == juego.getIntentsMax()) {
+			JOptionPane.showMessageDialog(null, "Has perdido!!");
+			deshabilitarBotones();
 		}
+	}
 
-		// Método para deshabilitar los botones que no puedes volver a usar
+	// Método para deshabilitar los botones que no puedes volver a usar
 
-		private void deshabilitarBotones() {
-			resolver.setEnabled(false);
-			pista.setEnabled(false);
-			for (int i = 0; i < array.length; i++) {
-				array[i].setEnabled(false);
-			}
+	private void deshabilitarBotones() {
+		resolver.setEnabled(false);
+		pista.setEnabled(false);
+		for (int i = 0; i < array.length; i++) {
+			array[i].setEnabled(false);
 		}
+	}
 
-		
-		//GETTERS Y SETTERS
-		// Getters y Setters
+	// GETTERS Y SETTERS
+	// Getters y Setters
 
-		public Ahorcado getJuego() {
-			return juego;
-		}
+	public Ahorcado getJuego() {
+		return juego;
+	}
 
-		public void setJuego(Ahorcado juego) {
-			this.juego = juego;
-		}
+	public void setJuego(Ahorcado juego) {
+		this.juego = juego;
+	}
 
-		public JButton getInicio() {
-			return inicio;
-		}
+	public JButton getInicio() {
+		return inicio;
+	}
 
-		public JMenuItem getNewGame() {
-			return newGame;
-		}
+	public JMenuItem getNewGame() {
+		return newGame;
+	}
 
-		public JMenuItem getAddDoc() {
-			return addDoc;
-		}
+	public JMenuItem getAddDoc() {
+		return addDoc;
+	}
 
-		public JMenuItem getNumIntentos() {
-			return numIntentos;
-		}
+	public JMenuItem getNumIntentos() {
+		return numIntentos;
+	}
 
-		public void setNumIntentos(JMenuItem numIntentos) {
-			this.numIntentos = numIntentos;
-		}
+	public void setNumIntentos(JMenuItem numIntentos) {
+		this.numIntentos = numIntentos;
+	}
 }

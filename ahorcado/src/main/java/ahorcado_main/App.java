@@ -24,19 +24,15 @@ public class App {
         palabrasDoc.put("Deportes", new ArrayList<String>(Arrays.asList("tenis", "baloncesto", "balonmano")));
 
 
-        // Creamos las ventanas
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        
+        // Creamos las ventanas 
                 try {
                      FormularioInicio form = new FormularioInicio();
-                     InterfazJuego interfaz = new InterfazJuego();
                      form.setVisible(true);
 
                 }catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-        });
-
-    }
+    
 }
