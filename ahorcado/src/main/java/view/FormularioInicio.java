@@ -25,7 +25,7 @@ public class FormularioInicio extends JFrame {
         setResizable(false);
         setTitle("Ahorcado");
         setBounds(500, 300, 550, 400);
-        setVisible(true);
+        
 
         contentPane = new JPanel();
         setContentPane(contentPane);

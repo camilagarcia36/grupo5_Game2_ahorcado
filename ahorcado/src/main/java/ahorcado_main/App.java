@@ -34,6 +34,7 @@ public class App {
 			public void run() {
 				try {
 					 FormularioInicio form = new FormularioInicio();
+					 form.setVisible(true);
 				}catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,12 +43,14 @@ public class App {
         EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-			        InterfazJuego interfaz = new InterfazJuego();
+					 FormularioInicio form = new FormularioInicio();
 				}catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
         });
+       
+
         
     }
 }
