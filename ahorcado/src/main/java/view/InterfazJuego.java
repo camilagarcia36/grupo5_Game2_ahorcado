@@ -134,24 +134,16 @@ public class InterfazJuego extends JFrame {
 		
 		// Evento botón iniciar juego
 
-		getInicio().addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		// Evento botón iniciar juego
+        ActionListener eventoBoton = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                form.setVisible(true);
+                setVisible(false);
+            }
+        };
 
-				form.setVisible(true);
-				setVisible(false);
-
-			}
-		});
-		// Evento botón iniciar desde menu
-
-		getNewGame().addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				form.setVisible(true);
-				setVisible(false);
-
-			}
-		});
+        getInicio().addActionListener(eventoBoton);
+        getNewGame().addActionListener(eventoBoton);
 
 		comoJugar.addActionListener(new ActionListener() {
 
@@ -266,6 +258,7 @@ public class InterfazJuego extends JFrame {
 	// Método para iniciar el juego con variables default
 
 		public void iniciarJuego() {
+			getNumIntentos().setText("Intentos: " + juego.getIntents());
 			textPalabra.setText(juego.getPalabraSecretaMostrar());
 			resolver.setEnabled(true);
 			pista.setEnabled(true);
@@ -277,6 +270,7 @@ public class InterfazJuego extends JFrame {
 			for (int i = 0; i < array.length; i++) {
 				array[i].setEnabled(true);
 			}
+			
 		}
 
 		

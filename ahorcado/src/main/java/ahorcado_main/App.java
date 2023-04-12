@@ -8,16 +8,11 @@ import java.util.Hashtable;
 import view.FormularioInicio;
 import view.InterfazJuego;
 
-/**
- * Hello world!
- *
- */
 public class App {
-	private static FormularioInicio form;
-	private static InterfazJuego interfaz;
-	public static Hashtable<String, ArrayList<String>> palabrasDoc;
 
-	public static void main( String[] args )
+    public static Hashtable<String, ArrayList<String>> palabrasDoc;
+
+    public static void main( String[] args )
     {
 
         //Creamos un hashtable con las palabras a utilizar.
@@ -31,26 +26,17 @@ public class App {
 
         // Creamos las ventanas
         EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					 FormularioInicio form = new FormularioInicio();
-					 form.setVisible(true);
-				}catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-        });
-        EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					 FormularioInicio form = new FormularioInicio();
-				}catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-        });
-       
+            public void run() {
+                try {
+                     FormularioInicio form = new FormularioInicio();
+                     InterfazJuego interfaz = new InterfazJuego();
+                     form.setVisible(true);
 
-        
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
     }
 }

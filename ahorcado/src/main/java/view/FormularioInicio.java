@@ -92,9 +92,7 @@ public class FormularioInicio extends JFrame {
                 } else {
                     intentos = 6; // Dificultad avanzada
                 }
-                JMenuItem menuItem = new JMenuItem(Integer.toString(intentos));
-                interfaz.setNumIntentos(menuItem);
-
+               
                 // Seteamos e iniciamos juego
 
                 interfaz.setJuego(
