@@ -31,6 +31,7 @@ public class InterfazJuego extends JFrame {
 	private JTextField textPalabra;
 	private JLabel pistas = new JLabel(), colgao = new JLabel();
 
+	private FormularioInicio form= new FormularioInicio();
 	private Ahorcado juego;
 
 	private JButton inicio, resolver, pista;
@@ -68,8 +69,8 @@ public class InterfazJuego extends JFrame {
 		JMenuItem salir = new JMenuItem("Salir");
 		menuArchivo.add(salir);
 
-		numIntentos = new JMenuItem("Intentos: 0");
-		menuArchivo.add(numIntentos);
+		setNumIntentos(new JMenuItem("Intentos: 0"));
+		menuArchivo.add(getNumIntentos());
 		menu = new JPanel();
 		palabra = new JPanel();
 		lifes = new JPanel();
@@ -124,11 +125,33 @@ public class InterfazJuego extends JFrame {
 		contentPane.add(palabra);
 		contentPane.add(botones);
 		contentPane.add(imagenes);
+		
 
 		// LISTENERS
 
 		// El ActionListener del menú "Como jugar" muestra una
 		// ventana emergente que explica las reglas del juego.
+		
+		// Evento botón iniciar juego
+
+		getInicio().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				form.setVisible(true);
+				setVisible(false);
+
+			}
+		});
+		// Evento botón iniciar desde menu
+
+		getNewGame().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				form.setVisible(true);
+				setVisible(false);
+
+			}
+		});
 
 		comoJugar.addActionListener(new ActionListener() {
 
@@ -261,7 +284,7 @@ public class InterfazJuego extends JFrame {
 		// Método para si se finaliza el juego
 
 		private void fin() {
-			numIntentos.setText("Intentos: " + juego.getIntents());
+			getNumIntentos().setText("Intentos: " + juego.getIntents());
 			if (juego.palabraSecretaDesvelada()) {
 				JOptionPane.showMessageDialog(null, "Has ganado!!");
 				deshabilitarBotones();
@@ -305,4 +328,11 @@ public class InterfazJuego extends JFrame {
 			return addDoc;
 		}
 
+		public JMenuItem getNumIntentos() {
+			return numIntentos;
+		}
+
+		public void setNumIntentos(JMenuItem numIntentos) {
+			this.numIntentos = numIntentos;
+		}
 }

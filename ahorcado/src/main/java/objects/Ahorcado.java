@@ -9,6 +9,8 @@ public class Ahorcado {
 
 	// Atributos
 
+	
+		
 		private ArrayList<String> palabras;
 		private Hashtable<String, ArrayList<String>> palabrasDoc = new Hashtable<String, ArrayList<String>>();
 		private int lifeNumber = 5;
@@ -31,7 +33,7 @@ public class Ahorcado {
 							"img/./intento5.png", "img/./intento6.png", "img/./intento7.png", "img/./intento8.png",
 							"img/./intento9.png", "img/./intento10.png" });
 			imagenes.put(8, new String[] { "", "img/./intento3.png", "img/./intento4.png", "img/./intento5.png", "img/./intento6.png",
-					"././intento7.png", "././intento8.png", "././intento9.png", "././intento10.png" });
+					"img/./intento7.png", "img/./intento8.png", "img/./intento9.png", "img/./intento10.png" });
 			imagenes.put(6, new String[] { "", "img/./intento5.png", "img/./intento6.png", "img/./intento7.png", "img/./intento8.png",
 					"img/./intento9.png", "img/./intento10.png" });
 		}
