@@ -24,9 +24,7 @@ public class App {
         palabrasDoc.put("Deportes", new ArrayList<String>(Arrays.asList("tenis", "baloncesto", "balonmano")));
 
 
-        // Creamos las ventanas
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        // Creamos las ventanas y 
                 try {
                      FormularioInicio form = new FormularioInicio();
                      InterfazJuego interfaz = new InterfazJuego();
@@ -36,7 +34,4 @@ public class App {
                     e.printStackTrace();
                 }
             }
-        });
-
     }
-}
