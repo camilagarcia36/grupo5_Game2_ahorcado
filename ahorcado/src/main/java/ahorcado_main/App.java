@@ -11,7 +11,7 @@ import view.InterfazJuego;
 public class App {
 
     public static Hashtable<String, ArrayList<String>> palabrasDoc;
-
+//a
     public static void main( String[] args )
     {
 

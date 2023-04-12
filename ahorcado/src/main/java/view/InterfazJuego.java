@@ -254,7 +254,7 @@ public class InterfazJuego extends JFrame {
 	}
 	
 	
-	
+	//a
 	// Método para iniciar el juego con variables default
 
 		public void iniciarJuego() {

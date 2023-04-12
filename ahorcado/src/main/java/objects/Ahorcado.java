@@ -141,6 +141,7 @@ public class Ahorcado {
 
 			return guiones;
 		}
+		//a
 
 		// Método para intentar resolver la palabra
 

@@ -79,7 +79,7 @@ public class FormularioInicio extends JFrame {
                 interfaz.setVisible(true);
 
                 int intentos;
-
+//a
                 
                 /*  se crea una instancia de la clase "Ahorcado", que es la clase que controla la
                  lógica del juego, y se la pasa a la ventana del juego para que se pueda
