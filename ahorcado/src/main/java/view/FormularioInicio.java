@@ -39,10 +39,11 @@ public class FormularioInicio extends JFrame {
         hard = new JRadioButton("Dificil");
         JLabel categoria = new JLabel("Categoria");
 
-        comboBox = new JComboBox<Object>();
-        ButtonGroup grupo = new ButtonGroup();
+       
+        
         btnStart = new JButton("Empezar");
-
+        
+        ButtonGroup grupo = new ButtonGroup();
         grupo.add(easy);
         grupo.add(normal);
         grupo.add(hard);
@@ -54,6 +55,7 @@ public class FormularioInicio extends JFrame {
         categoria.setBounds(249, 56, 69, 14);
 
         //Los dos tipos de array que hemos creado. 
+        comboBox = new JComboBox<Object>();
         comboBox.setModel(
                 new DefaultComboBoxModel<Object>(new String[] { "Superhéroes", "Deportes","Personajes de Videjuegos","Lenguas","Peliculas" }));
         comboBox.setBounds(313, 78, 109, 22);
@@ -77,7 +79,7 @@ public class FormularioInicio extends JFrame {
                 setVisible(false);
                 interfaz.setVisible(true);
 
-                // Seteamos los intentos
+              
                 int intentos;
               
                 if (getFacil().isSelected()) {

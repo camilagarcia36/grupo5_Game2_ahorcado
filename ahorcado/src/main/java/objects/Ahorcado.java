@@ -27,10 +27,10 @@ public class Ahorcado {
 		setPalabraSecretaMostrar();
 
 		/*
-		 * el primer elemento del hashtable es una clave de 10 y un arreglo de 11 rutas
-		 * de inmagenes, el primer elemento del array es una cadena vacía porque el
-		 * primer intento no tiene imagen asociada. Las siguientes diez cadenas de
-		 * caracteres contienen rutas a las img.
+		 * el primer elemento del hashtable es una clave de 10 y un array de 11 rutas de
+		 * inmagenes, el primer elemento del array es una cadena vacía porque el primer
+		 * intento no tiene imagen asociada. Las siguientes diez cadenas de caracteres
+		 * contienen rutas a las img.
 		 */
 
 		imagenes.put(10,
@@ -54,10 +54,9 @@ public class Ahorcado {
 		return lifeNumber;
 	}
 
-	// establecemos el valor del atributo palabras, recibe como parámetro una cadena
-	// de
-	// texto (opcion) y utiliza la tabla hash 'palabrasDoc' para obtener el valor
-	// correspondiente al parámetro y asignarlo al atributo palabras.
+	// establecemos el valor del atributo palabras, recibe como parámetro un String
+	// y utiliza la tabla hash 'palabrasDoc' para obtener el valor
+	// correspondiente al parametro y asignarlo al atributo palabras.
 
 	public void setPalabras(String opcion) {
 		this.palabras = palabrasDoc.get(opcion);
@@ -103,6 +102,8 @@ public class Ahorcado {
 		return str;
 	}
 
+	// Recorre la longitud de la palabra y muestra guiones en funcion de la
+	// longitud.
 	public void setPalabraSecretaMostrar() {
 		char[] str = new char[palabraSecreta.length()];
 
@@ -143,7 +144,8 @@ public class Ahorcado {
 		return letraEsta;
 	}
 
-	// Método para comprobar si se ha resuelto la palabra
+	// Método para comprobar si se ha resuelto la palabra, recorre la palabra y
+	// comprueba cuantos guiones hay.
 	public boolean palabraSecretaDesvelada() {
 		boolean guiones = true;
 		for (int i = 0; i < palabraSecretaMostrar.length && guiones; i++) {
@@ -180,18 +182,20 @@ public class Ahorcado {
 			pistaValida = true;
 			letra = palabraSecreta.charAt((int) (Math.random() * palabraSecreta.length()));
 
-			// se usa un bucle for para verificar si la letra ya está presente en la palabra
+			// se usa un bucle para verificar si la letra ya está presente en la palabra
 			// secreta
+
 			for (int i = 0; i < palabraSecretaMostrar.length && pistaValida; i++) {
 				if (palabraSecretaMostrar[i] == letra) {
 					pistaValida = false;
 				}
 			}
-			// verifica si la letra seleccionada no ha sido adivinada aún,si la letra ya
-			// está en la palabra entonces la pista no es válida y se selecciona una nueva
-			// letra aleatoria.
-			// una vez que se ha seleccionado una pista válida,se reemplaza la letra en la
-			// palabra secreta.
+			/*
+			 * verifica si la letra seleccionada no ha sido adivinada aún,si la letra ya
+			 * está en la palabra entonces se selecciona una nueva letra aleatoria.
+			 * una vez que se ha seleccionado una letra valida,se reemplaza la letra en la
+			 * palabra secreta.
+			 */
 
 		} while (!pistaValida);
 

@@ -203,7 +203,7 @@ public class InterfazJuego extends JFrame {
 		resolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				juego.intentoResolver(JOptionPane.showInputDialog("La palabra es: "));
-				textPalabra.setText(juego.getPalabraSecretaMostrar());
+				textPalabra.setText(juego.getPalabraSecretaMostrar()); 
 
 				colgado.setIcon(new ImageIcon(new ImageIcon(juego.getImagenes()[juego.getIntents()]).getImage()
 						.getScaledInstance(310, 525, Image.SCALE_SMOOTH)));

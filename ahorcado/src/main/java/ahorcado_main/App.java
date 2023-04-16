@@ -9,7 +9,7 @@ import view.FormularioInicio;
 public class App {
 
     public static Hashtable<String, ArrayList<String>> palabrasDoc;
-//a
+
     public static void main( String[] args )
     {
 
@@ -22,7 +22,6 @@ public class App {
         palabrasDoc.put("Deportes", new ArrayList<String>(Arrays.asList("tenis", "baloncesto", "balonmano")));
 
         
-   
 
         // Creamos las ventanas 
 
