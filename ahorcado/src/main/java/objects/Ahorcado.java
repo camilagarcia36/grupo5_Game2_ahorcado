@@ -176,6 +176,7 @@ public class Ahorcado {
 		boolean pistaValida;
 		char letra;
 
+		//hace el do hasta que la palabra sea true. 
 		do {
 			// selecciona una letra aleatoria de la palabra secreta mediante el uso de la
 			// clase Math y un método para generar números aleatorios.
